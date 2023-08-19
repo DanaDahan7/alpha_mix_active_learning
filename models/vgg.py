@@ -11,7 +11,7 @@ class VGGClassifier(nn.Module):
         self.n_label = n_label
 
         vgg_model = getattr(models, arch_name)
-        self.vgg = vgg_model(pretrained=pretrained)
+        self.vgg = vgg_model
 
         # Remove linear layer
         modules = list(self.vgg.features.children())
