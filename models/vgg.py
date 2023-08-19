@@ -10,7 +10,7 @@ class VGGClassifier(nn.Module):
 
         self.n_label = n_label
 
-        vgg_model = models.vgg11()
+        vgg_model = models.vgg11(weights=None)
         self.vgg = vgg_model
 
         # Remove linear layer
