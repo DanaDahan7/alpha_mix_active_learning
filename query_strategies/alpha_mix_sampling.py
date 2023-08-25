@@ -66,6 +66,7 @@ class AlphaMixSampling(Strategy):
 				break
 
 		if candidate.sum() > 0:
+			('the condition "if candidate. sum() > 0" occurred!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ')
 			print('Number of inconsistencies: %d' % (int(candidate.sum().item())))
 
 			print('alpha_mean_mean: %f' % min_alphas[candidate].mean(dim=1).mean().item())
