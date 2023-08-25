@@ -66,15 +66,15 @@ class AlphaMixSampling(Strategy):
 				break
 		print("Candidate sum:!!!!!!!!!!!!!!!!!", candidate.sum())
 		if candidate.sum() > 0:
-			print('the condition "if candidate. sum() > 0" occurred!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ')
+			print('the condition if candidate_sum() > 0 occurred!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 			print('Number of inconsistencies: %d' % (int(candidate.sum().item())))
 
 			print('alpha_mean_mean: %f' % min_alphas[candidate].mean(dim=1).mean().item())
 			print('alpha_std_mean: %f' % min_alphas[candidate].mean(dim=1).std().item())
 			print('alpha_mean_std %f' % min_alphas[candidate].std(dim=1).mean().item())
-
+			
 			self.writer.add_scalar('stats/candidate_set_size', candidate.sum().item(), self.query_count)
-			self.writer.add_scalar('stats/alpha_mean_mean', min_alphas[].mean(dim=1).mean().item(), self.query_count)
+			self.writer.add_scalar('stats/alpha_mean_mean', min_alphas[candidate].mean(dim=1).mean().item(), self.query_count)
 			self.writer.add_scalar('stats/alpha_std_mean', min_alphas[candidate].mean(dim=1).std().item(), self.query_count)
 			self.writer.add_scalar('stats/alpha_mean_std', min_alphas[candidate].std(dim=1).mean().item(), self.query_count)
 
