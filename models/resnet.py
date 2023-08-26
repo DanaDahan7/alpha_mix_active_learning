@@ -10,7 +10,7 @@ class ResNetClassifier(nn.Module):
 
         self.n_label = n_label
 
-        resnet18_model = models.ResNet18(weights=None)
+        resnet18_model = models.resnet18(weights=None)
         resnet = resnet18_model
 
         # Remove linear layers
