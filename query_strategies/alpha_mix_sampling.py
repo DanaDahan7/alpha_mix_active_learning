@@ -59,12 +59,11 @@ class AlphaMixSampling(Strategy):
 
 			min_alphas[is_changed] = tmp_min_alphas[is_changed]
 			candidate += tmp_pred_change
-			print("Candidate array:!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", candidate)
 			print('With alpha_cap set to %f, number of inconsistencies: %d' % (alpha_cap, int(tmp_pred_change.sum().item())))
 
 			if candidate.sum() > n:
 				break
-		print("Candidate sum:!!!!!!!!!!!!!!!!!", candidate.sum())
+		print("Candidate sum: ", candidate.sum())
 		if candidate.sum() > 0:
 			print('the condition if candidate_sum() > 0 occurred!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 			print('Number of inconsistencies: %d' % (int(candidate.sum().item())))
