@@ -13,10 +13,10 @@ class DenseNetClassifier(nn.Module):
         self.n_label = n_label
 
         densenet_model = models.densenet121(weights=None)
-        self.densenet = densenet_model
+        densenet = densenet_model
 
         # Remove linear layers
-        modules = list(self.densenet.features.children())
+        modules = list(densenet.features.children())
         if modules[0].in_channels != in_channels:
             conv = modules[0]
             modules[0] = nn.Conv2d(in_channels=in_channels, out_channels=conv.out_channels,
