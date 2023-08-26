@@ -12,10 +12,11 @@ class DenseNetClassifier(nn.Module):
 
         self.n_label = n_label
 
-        densenet_model = models.DenseNet(weights=None)
         #model = getattr(models, arch_name)
 
-        self.densenet = densenet_model   
+        #self.densenet = densenet_model
+        densenet = models.DenseNet(pretrained=pretrained)
+        
         #densenet = model(pretrained=pretrained)
         #densenet = DenseNet(pretrained=pretrained)
 
