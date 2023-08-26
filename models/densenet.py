@@ -12,9 +12,8 @@ class DenseNetClassifier(nn.Module):
 
         self.n_label = n_label
 
-        densenet_model = getattr(models, arch_name)
-        self.densenet = densenet_model(pretrained=pretrained)
-        
+        densenet_model = models.resnet50(weights=None)
+        self.densenet = densenet_model
 
         # Remove linear layers
         modules = list(densenet.features.children())
