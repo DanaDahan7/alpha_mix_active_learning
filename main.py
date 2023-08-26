@@ -531,7 +531,7 @@ def al_train_sub_experiment(args, train_args, train_params, strategy_name, gener
                     'fine_tune_layers': train_args.fine_tune_layers,
                     'emb_size': train_params['emb_size'],
                     'in_channels': train_params['in_channels']}
-    elif len(train_args.model) >= 8 and train_args.model[:6] == 'resnet':
+    elif len(train_args.model) >= 6 and train_args.model[:6] == 'resnet':
         net = ResNetClassifier
         net_args = {'arch_name': train_args.model, 'n_label': train_params['n_label'],
                     'pretrained': train_args.pretrained_model,
