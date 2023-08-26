@@ -1,4 +1,4 @@
-import torch
+.import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torchvision.models as models
@@ -15,7 +15,7 @@ class DenseNetClassifier(nn.Module):
         densenet_model = getattr(models, arch_name)
 
         #densenet = densenet_model
-        densenet = densenet_model(pretrained=pretrained)
+        self.densenet = densenet_model(pretrained=pretrained)
         
 
         # Remove linear layers
