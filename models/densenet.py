@@ -14,7 +14,7 @@ class DenseNetClassifier(nn.Module):
 
         densenet_model = getattr(models, arch_name)
 
-        self.densenet = densenet_model
+        densenet = densenet_model
         #densenet = models.DenseNet(pretrained=pretrained)
         
         #densenet = model(pretrained=pretrained)
