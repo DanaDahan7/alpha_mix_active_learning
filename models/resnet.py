@@ -4,14 +4,14 @@ from models.utils import build_mlp
 
 
 class ResNetClassifier(nn.Module):
-    def __init__(self, arch_name='resnet50', n_label=10, pretrained=True, dropout=0.2,
+    def __init__(self, arch_name='resnet18', n_label=10, pretrained=True, dropout=0.2,
                  fine_tune_layers=1, emb_size=256, in_channels=1):
         super(ResNetClassifier, self).__init__()
 
         self.n_label = n_label
 
-        model = getattr(models, arch_name)
-        resnet = model(pretrained=pretrained)
+        resnet18_model = models.ResNet18(weights=None)
+        resnet = resnet18_model
 
         # Remove linear layers
         modules = list(resnet.children())[:-1]
