@@ -319,7 +319,7 @@ class VisionTransformerClassifier(nn.Module):
                  # "Concatenate [CLS] tokens for the `n` last blocks. We use `n=4` when evaluating ViT-Small and `n=1` with ViT-Base."
                  avgpool_patchtokens=False,
                  # "Whether ot not to concatenate the global average pooled features to the [CLS] token. We typically set this to False for ViT-Small and to True with ViT-Base."
-                 pretrained=True, fine_tune_layers=0, pretrained_weights=None, checkpoint_key='teacher'):
+                 pretrained=False, fine_tune_layers=0, pretrained_weights=None, checkpoint_key='teacher'):
         super(VisionTransformerClassifier, self).__init__()
 
         self.n_label = n_label
