@@ -130,11 +130,11 @@ def get_CIFAR100(data_dir):
 
 
 def get_MiniImageNet(data_dir):
-    f = open(os.path.join(data_dir, 'MiniImageNet', 'mini-imagenet-cache-train.pkl'), 'rb')
+    f = open(os.path.join(data_dir, 'miniimagenet', 'mini-imagenet-cache-train.pkl'), 'rb')
     train_data = pickle.load(f)
-    f = open(os.path.join(data_dir, 'MiniImageNet', 'mini-imagenet-cache-val.pkl'), 'rb')
+    f = open(os.path.join(data_dir, 'miniimagenet', 'mini-imagenet-cache-val.pkl'), 'rb')
     val_data = pickle.load(f)
-    f = open(os.path.join(data_dir, 'MiniImageNet', 'mini-imagenet-cache-test.pkl'), 'rb')
+    f = open(os.path.join(data_dir, 'miniimagenet', 'mini-imagenet-cache-test.pkl'), 'rb')
     test_data = pickle.load(f)
 
     labels = list(train_data['class_dict'].keys()) + list(val_data['class_dict'].keys()) + list(test_data['class_dict'].keys())
